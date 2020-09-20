@@ -18,9 +18,9 @@ let secPosition = sec * 360 / 60;
 
 function runClock() {
   // incrementally increase hand positions ([pos] + [num deg to display next pos])
-  hrPosition = hrPosition + (1 / 120);
-  minPosition = minPosition + (6 / 60);
-  secPosition = secPosition + 6;
+  hrPosition = hrPosition + (1 / 120); // math: 360deg / 12hr / 3600sec
+  minPosition = minPosition + (6 / 60); // math: (1/60)sec * 6deg
+  secPosition = secPosition + 6; // math: 6deg == 1sec
 
   // rotate each hand according to apporiate hand position
   HOURHAND.style.transform = "rotate(" + hrPosition + "deg)";
